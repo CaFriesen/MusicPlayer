@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRC_MusicPlayer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="487.987" Width="800" ResizeMode="NoResize">
 
 
     <Grid>
 
         <Button Content="Add" x:Name="btnAddSong" Margin="607,308,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="21" Width="128" Click="BtnAddSong_Click"/>
         <Button Content="Delete" Name="btnDelete" Margin="349,281,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="49" Width="148"/>
-        <Button Content="Previous" Width="75" Height="76" Margin="206,335,0,0" Name="btnPrevSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678"/>
+        <Button Content="Previous" Width="75" Height="76" Margin="206,335,0,0" Name="btnPrevSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678" Click="BtnPrevSong_Click"/>
         <Button Content="Stop" Width="75" Height="76" Margin="286,335,0,0" x:Name="btnStop" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678" Click="BtnStop_Click"/>
         <Button Content="Play" Width="75" Height="75" Margin="366,336,0,0" Name="btnPlay" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="BtnPlay_Click"/>
-        <Button Content="Next" Width="75" Height="75" Margin="446,336,0,0" Name="btnNextSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Next" Width="75" Height="75" Margin="446,336,0,0" Name="btnNextSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="BtnNextSong_Click"/>
         <Button Content="Add" x:Name="btnAddArtist" Margin="607,133,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="21" Width="128" Click="BtnAddArtist_Click"/>
 
         <ListBox HorizontalAlignment="Left" Height="320" Margin="199,10,0,0" VerticalAlignment="Top" Width="145" Name="lbPlaylist"/>
@@ -42,5 +42,6 @@
 
         <Button Name="btnNewSongPlaylist" Content="Add songs to (new) playlist" HorizontalAlignment="Left" Margin="33,364,0,0" VerticalAlignment="Top" Width="161" Height="47" Click="BtnNewSongPlaylist_Click"/>
         <TextBox Name="tbName" HorizontalAlignment="Left" Height="22" Margin="33,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <Label Name="lblPlaying" Content="Now playing:" HorizontalAlignment="Left" Margin="33,411,0,0" VerticalAlignment="Top" FontSize="24" Width="702"/>
     </Grid>
 </Window>

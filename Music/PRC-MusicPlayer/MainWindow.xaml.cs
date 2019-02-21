@@ -131,5 +131,43 @@ namespace PRC_MusicPlayer
         {
             musicPlayer.StopPlaying();
         }
+
+        private void UpdateSongLabel()
+        {
+            if (musicPlayer.IsPlaying() == null)
+            {
+                lblPlaying.Content = "Now playing: ";
+            }
+            else
+            {
+                lblPlaying.Content = "Now playing: " + musicPlayer.IsPlaying().Name;
+            }
+        }
+
+        private void BtnPrevSong_Click(object sender, RoutedEventArgs e)
+        {
+            if (musicPlayer.playingIndex - 1 < 0)
+            {
+                MessageBox.Show("There is no previous song");
+            }
+            else
+            {
+                musicPlayer.playingIndex--;
+            }
+            UpdateSongLabel();
+        }
+
+        private void BtnNextSong_Click(object sender, RoutedEventArgs e)
+        {
+            if (musicPlayer.playingIndex + 1 > musicPlayer.Playing.Count)
+            {
+                MessageBox.Show("There is no next song");
+            }
+            else
+            {
+                musicPlayer.playingIndex++;
+            }
+            UpdateSongLabel();
+        }
     }
 }
