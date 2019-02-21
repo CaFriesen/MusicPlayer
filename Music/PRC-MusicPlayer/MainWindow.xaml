@@ -6,11 +6,35 @@
         xmlns:local="clr-namespace:PRC_MusicPlayer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
-    
-    
+
+
     <Grid>
-        <Button Content="Previous" Width="75" Height="75" Margin="286,336,433,9.5" Name="btnPrevSong" BorderThickness="0"/>
-        <Button Content="Next" Width="75" Height="75" Margin="446,336,273,9.5" Name="btnNextSong"/>
-        <Button Content="Pause/Play" Width="75" Height="75" Margin="366,336,353,9.5" Name="btnPause"/>
+
+        <Button Content="Previous" Width="75" Height="76" Margin="286,336,0,0" Name="btnPrevSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Pause/Play" Width="75" Height="75" Margin="366,336,0,0" Name="btnPause" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Next" Width="75" Height="75" Margin="446,336,0,0" Name="btnNextSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        
+        <ListBox HorizontalAlignment="Left" Height="294" Margin="63,37,0,0" VerticalAlignment="Top" Width="145" Name="lbPlaylist"/>
+        <ListBox HorizontalAlignment="Left" Height="294" Margin="236,37,0,0" VerticalAlignment="Top" Width="148" Name="lbSongs"/>
+
+
+        <Label Content="New artist" HorizontalAlignment="Left" Margin="502,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="27"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="502,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="29"/>
+        <Label Content="Birthday" HorizontalAlignment="Left" Margin="502,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="27"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="607,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Name="tbname" />
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="607,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Name="tbBirthday"/>
+
+        <Label Content="New Song" HorizontalAlignment="Left" Margin="502,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="502,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="26"/>
+        <Label Content="Artist" HorizontalAlignment="Left" Margin="502,211,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="502,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
+        <Label Content="PathToFile" HorizontalAlignment="Left" Margin="502,273,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
+        <Label Content="Lyrics" HorizontalAlignment="Left" Margin="502,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
+
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="607,184,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" Name="Name"/>
+        <ComboBox HorizontalAlignment="Left" Margin="607,217,0,0" VerticalAlignment="Top" Width="128" Name="Artist"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="607,247,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" x:Name="Year"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="607,279,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" Name="PathToFile"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="607,307,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" Name="tbLyrics"/>
     </Grid>
 </Window>
