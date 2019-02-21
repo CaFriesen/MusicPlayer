@@ -26,13 +26,15 @@ namespace PRC_MusicPlayer
 
         public void Add(Song song)
         {
+            if (song == null)
+                return;
 
+            performances.Add(song);
         }
 
         public override string ToString()
         {
-            //TODO: Make usefull return
-            return base.ToString();
+            return Name + " | Date of birth: " + Birthday;
         }
     }
 }

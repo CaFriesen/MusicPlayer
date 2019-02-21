@@ -24,8 +24,7 @@ namespace PRC_MusicPlayer
 
         public override string ToString()
         {
-            //TODO: Make usefull
-            return base.ToString();
+            return Name + " | Year: " + Year + " | Artist: " + Performer;
         }
     }
 }
