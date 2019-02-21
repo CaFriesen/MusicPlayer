@@ -74,11 +74,16 @@ namespace PRC_MusicPlayer
                 }
             }
 
-            List<Song> pl = lbSongs.SelectedItems as List<Song>;
+            List<Song> pl = new List<Song>();
+            foreach (Song song in lbSongs.SelectedItems)
+            {
+                pl.Add(song);
+            }
+
             Playlist playlist = new Playlist(tbName.Text);
             playlist.Add(pl);
             musicPlayer.Add(playlist);
-            
+            UpdateLists();
         }
 
         private void BtnAddSong_Click(object sender, RoutedEventArgs e)
