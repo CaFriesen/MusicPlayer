@@ -125,11 +125,15 @@ namespace PRC_MusicPlayer
                     MessageBox.Show("nothing selected");
                 }
             }
+            UpdateSongLabel();
+            UpdateLists();
         }
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             musicPlayer.StopPlaying();
+            UpdateSongLabel();
+            UpdateLists();
         }
 
         private void UpdateSongLabel()
@@ -155,11 +159,12 @@ namespace PRC_MusicPlayer
                 musicPlayer.playingIndex--;
             }
             UpdateSongLabel();
+            UpdateLists();
         }
 
         private void BtnNextSong_Click(object sender, RoutedEventArgs e)
         {
-            if (musicPlayer.playingIndex + 1 > musicPlayer.Playing.Count)
+            if (musicPlayer.playingIndex + 1 >= musicPlayer.Playing.Count)
             {
                 MessageBox.Show("There is no next song");
             }
@@ -168,6 +173,7 @@ namespace PRC_MusicPlayer
                 musicPlayer.playingIndex++;
             }
             UpdateSongLabel();
+            UpdateLists();
         }
     }
 }

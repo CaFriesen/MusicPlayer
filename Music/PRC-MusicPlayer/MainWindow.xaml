@@ -20,7 +20,7 @@
 
         <ListBox HorizontalAlignment="Left" Height="320" Margin="199,10,0,0" VerticalAlignment="Top" Width="145" Name="lbPlaylist"/>
         <ListBox HorizontalAlignment="Left" Height="266" Margin="349,10,0,0" VerticalAlignment="Top" Width="148" Name="lbPlayingSongs"/>
-        <ListBox HorizontalAlignment="Left" Height="320" Margin="33,10,0,0" VerticalAlignment="Top" Width="161" x:Name="lbSongs"/>
+        <ListBox HorizontalAlignment="Left" Height="320" Margin="33,10,0,0" VerticalAlignment="Top" Width="161" x:Name="lbSongs" SelectionMode="Extended"/>
 
 
         <Label Content="New artist" HorizontalAlignment="Left" Margin="502,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="27"/>
