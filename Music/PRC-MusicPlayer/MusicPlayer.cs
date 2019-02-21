@@ -13,7 +13,7 @@ namespace PRC_MusicPlayer
         private List<Playlist> playlists;
 
         private List<Song> playing;
-        private int playingIndex = 0;
+        public int playingIndex { get; set; }
         private bool playingSong = false;
 
         public IReadOnlyList<Song> Songs
@@ -102,22 +102,6 @@ namespace PRC_MusicPlayer
         {
             // if true playing[playingIndex] if false null
             return playingSong ? playing[playingIndex] : null;
-        }
-
-        public void NextSong()
-        {
-            if (playingIndex + 1 > playing.Count)
-                return;
-
-            playingIndex++;
-        }
-
-        public void PreviousSong()
-        {
-            if (playingIndex - 1 < 0)
-                return;
-
-            playingIndex++;
         }
 
         public void StopPlaying()
