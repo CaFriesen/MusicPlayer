@@ -20,9 +20,41 @@ namespace PRC_MusicPlayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        MusicPlayer musicPlayer;
+
         public MainWindow()
         {
             InitializeComponent();
+            musicPlayer = new MusicPlayer();
+        }
+
+        private void BtnAddArtist_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtArtistname.Text != "" && dtBirthday.SelectedDate != null)
+            {
+                musicPlayer.Add(new Artist(txtArtistname.Text, dtBirthday.SelectedDate.Value.Date));
+            }
+            else
+            {
+                MessageBox.Show("Please correct the name or birthday");
+            }
+            UpdateLists();
+        }
+
+        private void UpdateLists()
+        {
+            lbPlayingSongs.ItemsSource = null;
+            lbPlaylist.ItemsSource = null;
+            lbSongs.ItemsSource = null;
+            cbArtist.ItemsSource = null;
+
+            if (musicPlayer.IsPlaying() != null)
+            {
+                lbPlayingSongs.ItemsSource = musicPlayer.Playing;
+            }
+            lbPlaylist.ItemsSource = musicPlayer.Playlists;
+            lbSongs.ItemsSource = musicPlayer.Songs;
+            cbArtist.ItemsSource = musicPlayer.Artists;
         }
     }
 }

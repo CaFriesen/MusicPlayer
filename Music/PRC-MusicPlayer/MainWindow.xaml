@@ -16,7 +16,7 @@
         <Button Content="Stop" Width="75" Height="76" Margin="286,335,0,0" x:Name="btnStop" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678"/>
         <Button Content="Play" Width="75" Height="75" Margin="366,336,0,0" Name="btnPlay" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Button Content="Next" Width="75" Height="75" Margin="446,336,0,0" Name="btnNextSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Button Content="Add" x:Name="btnAddArtist" Margin="607,133,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="21" Width="128"/>
+        <Button Content="Add" x:Name="btnAddArtist" Margin="607,133,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="21" Width="128" Click="BtnAddArtist_Click"/>
 
         <ListBox HorizontalAlignment="Left" Height="320" Margin="199,10,0,0" VerticalAlignment="Top" Width="145" Name="lbPlaylist"/>
         <ListBox HorizontalAlignment="Left" Height="266" Margin="349,10,0,0" VerticalAlignment="Top" Width="148" Name="lbPlayingSongs"/>
@@ -27,7 +27,6 @@
         <Label Content="Name" HorizontalAlignment="Left" Margin="502,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="29"/>
         <Label Content="Birthday" HorizontalAlignment="Left" Margin="502,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="27"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="607,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Name="txtArtistname" />
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="607,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Name="txtArtistBirthday"/>
 
         <Label Content="New Song" HorizontalAlignment="Left" Margin="502,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="28"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="502,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.942" Width="100" Height="26"/>
@@ -41,5 +40,6 @@
         <TextBox HorizontalAlignment="Left" Height="24" Margin="607,247,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" x:Name="txtSongYear"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="607,279,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" Name="txtSongPathToFile"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="607,307,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" Name="txtSongLyrics"/>
+        <DatePicker HorizontalAlignment="Left" Margin="607,104,0,0" VerticalAlignment="Top" Width="128" Name="dtBirthday" FirstDayOfWeek="Monday"/>
     </Grid>
 </Window>

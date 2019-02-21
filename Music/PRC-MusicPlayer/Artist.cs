@@ -34,7 +34,7 @@ namespace PRC_MusicPlayer
 
         public override string ToString()
         {
-            return Name + " | Date of birth: " + Birthday;
+            return Name + " | Date of birth: " + Birthday.Date;
         }
     }
 }

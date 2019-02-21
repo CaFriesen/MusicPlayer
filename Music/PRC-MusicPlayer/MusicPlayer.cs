@@ -14,7 +14,7 @@ namespace PRC_MusicPlayer
 
         private List<Song> playing;
         private int playingIndex = 0;
-        bool playingSong = false;
+        private bool playingSong = false;
 
         public IReadOnlyList<Song> Songs
         {
@@ -31,11 +31,17 @@ namespace PRC_MusicPlayer
             get { return this.playlists.AsReadOnly(); }
         }
 
+        public IReadOnlyList<Song> Playing
+        {
+            get { return this.playing.AsReadOnly(); }
+        }
+
         public MusicPlayer()
         {
             songs = new List<Song>();
             artists = new List<Artist>();
             playlists = new List<Playlist>();
+            playing = new List<Song>();
         }
 
         public void Add(Artist artist)
@@ -94,7 +100,7 @@ namespace PRC_MusicPlayer
 
         public Song IsPlaying()
         {
-            return playingSong ? null : playing[playingIndex];
+            return playingSong ? playing[playingIndex] : null;
         }
 
         public void NextSong()
