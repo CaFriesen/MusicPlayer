@@ -102,5 +102,29 @@ namespace PRC_MusicPlayer
             }
             UpdateLists();
         }
+
+        private void BtnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if(lbPlaylist.SelectedItem != null)
+            {
+                musicPlayer.Play(lbPlaylist.SelectedItem as Playlist);
+            }
+            else
+            {
+                if(lbSongs.SelectedItem != null)
+                {
+                    musicPlayer.Play(lbSongs.SelectedItem as Song);
+                }
+                else
+                {
+                    MessageBox.Show("nothing selected");
+                }
+            }
+        }
+
+        private void BtnStop_Click(object sender, RoutedEventArgs e)
+        {
+            musicPlayer.StopPlaying();
+        }
     }
 }
