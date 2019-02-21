@@ -100,6 +100,7 @@ namespace PRC_MusicPlayer
 
         public Song IsPlaying()
         {
+            // if true playing[playingIndex] if false null
             return playingSong ? playing[playingIndex] : null;
         }
 

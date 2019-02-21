@@ -56,5 +56,29 @@ namespace PRC_MusicPlayer
             lbSongs.ItemsSource = musicPlayer.Songs;
             cbArtist.ItemsSource = musicPlayer.Artists;
         }
+
+        private void BtnNewSongPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            if(tbName.Text == "")
+            {
+                MessageBox.Show("No name entered");
+                return;
+            }
+
+            foreach (Playlist playlistName in musicPlayer.Playlists)
+            {
+                if(playlistName.Name == tbName.Text)
+                {
+                    MessageBox.Show("Playlist already exist");
+                    return;
+                }
+            }
+
+            List<Song> pl = lbSongs.SelectedItems as List<Song>;
+            Playlist playlist = new Playlist(tbName.Text);
+            playlist.Add(pl);
+            musicPlayer.Add(playlist);
+            
+        }
     }
 }
