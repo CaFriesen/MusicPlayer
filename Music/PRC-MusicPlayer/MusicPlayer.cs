@@ -68,5 +68,10 @@ namespace PRC_MusicPlayer
         {
             return null;
         }
+
+        public void StopPlaying()
+        {
+
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace PRC_MusicPlayer
 {
     class Artist
     {
-        public string Name { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Name { get; private set; }
+        public DateTime Birthday { get; private set; }
         private List<Song> performances;
 
         public IReadOnlyList<Song> Performances
@@ -20,6 +20,8 @@ namespace PRC_MusicPlayer
         public Artist(string name, DateTime birthday)
         {
             performances = new List<Song>();
+            Name = name;
+            Birthday = birthday;
         }
 
         public void Add(Song song)

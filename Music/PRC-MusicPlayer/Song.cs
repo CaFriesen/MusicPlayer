@@ -8,15 +8,18 @@ namespace PRC_MusicPlayer
 {
     class Song
     {
-        public string Name { get; set; }
-        public int Year { get; set; }
-        public string PathToFile { get; set; }
-        public string Lyrics { get; set; }
-        public Artist Performer { get; set; }
+        public string Name { get; private set; }
+        public int Year { get; private set; }
+        public string PathToFile { get; private set; }
+        public string Lyrics { get; private set; }
+        public Artist Performer { get; private set; }
 
         public Song(string name, int year, Artist performer, string pathToFile)
         {
-
+            Name = name;
+            Year = year;
+            Performer = performer;
+            PathToFile = pathToFile;
         }
 
         public override string ToString()

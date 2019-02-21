@@ -16,8 +16,9 @@ namespace PRC_MusicPlayer
             get { return this.songs.AsReadOnly(); }
         }
 
-        public Playlist()
+        public Playlist(string name)
         {
+            Name = name;
             songs = new List<Song>();
         }
 
