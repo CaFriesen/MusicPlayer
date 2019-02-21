@@ -36,7 +36,7 @@ namespace PRC_MusicPlayer
             }
             else
             {
-                MessageBox.Show("Please correct the name or birthday");
+                MessageBox.Show("Please fill in all the boxes");
             }
             UpdateLists();
         }
@@ -55,6 +55,28 @@ namespace PRC_MusicPlayer
             lbPlaylist.ItemsSource = musicPlayer.Playlists;
             lbSongs.ItemsSource = musicPlayer.Songs;
             cbArtist.ItemsSource = musicPlayer.Artists;
+        }
+
+        private void BtnAddSong_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSongName.Text != "" && txtSongYear.Text != "" && cbArtist.SelectedItem != null && txtSongPathToFile.Text != "")
+            {
+                int year;
+                Artist artist = cbArtist.SelectedItem as Artist;
+                if (Int32.TryParse(txtSongYear.Text, out year))
+                {
+                    musicPlayer.Add(new Song(txtSongName.Text, year, artist, txtSongPathToFile.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Year needs to be a number");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the boxes");
+            }
+            UpdateLists();
         }
     }
 }
