@@ -94,7 +94,23 @@ namespace PRC_MusicPlayer
 
         public Song IsPlaying()
         {
-            return playing[playingIndex];
+            return playingSong ? null : playing[playingIndex];
+        }
+
+        public void NextSong()
+        {
+            if (playingIndex + 1 > playing.Count)
+                return;
+
+            playingIndex++;
+        }
+
+        public void PreviousSong()
+        {
+            if (playingIndex - 1 < 0)
+                return;
+
+            playingIndex++;
         }
 
         public void StopPlaying()
