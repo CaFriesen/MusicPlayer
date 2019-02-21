@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRC_MusicPlayer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    
+    
     <Grid>
-        
+        <Button Content="Previous" Width="75" Height="75" Margin="286,336,433,9.5" Name="btnPrevSong" BorderThickness="0"/>
+        <Button Content="Next" Width="75" Height="75" Margin="446,336,273,9.5" Name="btnNextSong"/>
+        <Button Content="Pause/Play" Width="75" Height="75" Margin="366,336,353,9.5" Name="btnPause"/>
     </Grid>
 </Window>
