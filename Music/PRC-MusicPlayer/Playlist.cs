@@ -24,23 +24,39 @@ namespace PRC_MusicPlayer
 
         public void Add(Song song)
         {
+            if (song == null)
+                return;
 
+            songs.Add(song);
         }
 
         public void Add(List<Song> songs)
         {
+            if (songs.Count <= 0)
+                return;
 
+            foreach (Song song in songs)
+            {
+                this.songs.Add(song);
+            }
         }
 
         public void Remove(Song song)
         {
+            this.songs.RemoveAll(s => s.Equals(song));
+        }
 
+        public void Remove(int songIndex)
+        {
+            if (songIndex < songs.Count && songIndex >= 0)
+            {
+                songs.RemoveAt(songIndex);
+            }
         }
 
         public override string ToString()
         {
-            //TODO: Make usefull output
-            return base.ToString();
+            return Name + " | Songs: " + songs.Count;
         }
     }
 }
