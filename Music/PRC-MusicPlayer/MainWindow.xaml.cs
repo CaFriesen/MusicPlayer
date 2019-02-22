@@ -175,5 +175,18 @@ namespace PRC_MusicPlayer
             UpdateSongLabel();
             UpdateLists();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Playlist playlist in musicPlayer.Playlists)
+            {
+                if (playlist == lbPlaylist.SelectedItem)
+                {
+                    musicPlayer.Remove(playlist);
+                    UpdateLists();
+                    return;
+                }
+            }
+        }
     }
 }
