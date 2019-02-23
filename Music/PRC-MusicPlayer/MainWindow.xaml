@@ -11,7 +11,7 @@
     <Grid>
 
         <Button Content="Add" x:Name="btnAddSong" Margin="607,308,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="21" Width="128" Click="BtnAddSong_Click"/>
-        <Button Content="Delete" Name="btnDelete" Margin="349,281,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="49" Width="148" Click="BtnDelete_Click"/>
+        <Button Content="Delete playlist" Name="btnDelete" Margin="349,281,0,0" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="49" Width="148" Click="BtnDelete_Click"/>
         <Button Content="Previous" Width="75" Height="76" Margin="206,335,0,0" Name="btnPrevSong" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678" Click="BtnPrevSong_Click"/>
         <Button Content="Stop" Width="75" Height="76" Margin="286,335,0,0" x:Name="btnStop" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="-1.133,0.678" Click="BtnStop_Click"/>
         <Button Content="Play" Width="75" Height="75" Margin="366,336,0,0" Name="btnPlay" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="BtnPlay_Click"/>

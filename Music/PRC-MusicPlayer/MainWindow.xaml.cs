@@ -26,7 +26,54 @@ namespace PRC_MusicPlayer
         {
             InitializeComponent();
             musicPlayer = new MusicPlayer();
+#if DEBUG
+            InsertTestData();
+#endif
         }
+
+        //If we are not in debug mode this function will not exist
+#if DEBUG
+        private void InsertTestData()
+        {
+            //Create random fucntion so we get new data every startup
+            Random tempRandom = new Random();
+
+            musicPlayer.Add(new Artist("Henk", RandomDay(tempRandom)));
+            musicPlayer.Add(new Artist("Steve", RandomDay(tempRandom)));
+            musicPlayer.Add(new Artist("Camiel", RandomDay(tempRandom)));
+            musicPlayer.Add(new Artist("Max", RandomDay(tempRandom)));
+            musicPlayer.Add(new Artist("Frank", RandomDay(tempRandom)));
+            musicPlayer.Add(new Artist("Dave", RandomDay(tempRandom)));
+
+            for (int i = 0; i < 30; i++)
+            {
+                musicPlayer.Add(new Song("Example " + (i + 1), tempRandom.Next(2000,2019) ,musicPlayer.Artists[tempRandom.Next(musicPlayer.Artists.Count)], "Documents/Music"));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                Playlist pl = new Playlist("Example pl " + (i + 1));
+                pl.Add(musicPlayer.Songs[tempRandom.Next(musicPlayer.Songs.Count)]);
+                pl.Add(musicPlayer.Songs[tempRandom.Next(musicPlayer.Songs.Count)]);
+                pl.Add(musicPlayer.Songs[tempRandom.Next(musicPlayer.Songs.Count)]);
+                pl.Add(musicPlayer.Songs[tempRandom.Next(musicPlayer.Songs.Count)]);
+                pl.Add(musicPlayer.Songs[tempRandom.Next(musicPlayer.Songs.Count)]);
+                musicPlayer.Add(pl);
+            }
+
+            UpdateLists();
+        }
+
+        //this function is from Stackoverflow i copied it since its not a crucial part of the assignment
+        //Credit to: https://stackoverflow.com/questions/194863/random-date-in-c-sharp
+        DateTime RandomDay(Random gen)
+        {
+            DateTime start = new DateTime(1995, 1, 1);
+            DateTime end = new DateTime(2000, 12, 25);
+            int range = (end - start).Days;
+            return start.AddDays(gen.Next(range));
+        }
+#endif
 
         private void BtnAddArtist_Click(object sender, RoutedEventArgs e)
         {
