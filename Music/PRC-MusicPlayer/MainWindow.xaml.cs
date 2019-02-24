@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace PRC_MusicPlayer
 {
@@ -21,11 +22,14 @@ namespace PRC_MusicPlayer
     public partial class MainWindow : Window
     {
         MusicPlayer musicPlayer;
+        MediaPlayer Music;
+        Uri link;
 
         public MainWindow()
         {
             InitializeComponent();
             musicPlayer = new MusicPlayer();
+            Music = new MediaPlayer();
         }
 
         private void BtnAddArtist_Click(object sender, RoutedEventArgs e)
@@ -110,15 +114,40 @@ namespace PRC_MusicPlayer
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
-            if(lbPlaylist.SelectedItem != null)
+
+            if (lbPlaylist.SelectedItem != null)
             {
                 musicPlayer.Play(lbPlaylist.SelectedItem as Playlist);
+                Music.Stop();
+                Song song = musicPlayer.Playing[musicPlayer.playingIndex];
+                try
+                {
+                    link = new Uri(song.PathToFile);
+                    Music.Open(link);
+                    Music.Play();
+                }
+                catch (UriFormatException uriFormatException)
+                {
+                    MessageBox.Show(uriFormatException.Message);
+                }
             }
             else
             {
                 if(lbSongs.SelectedItem != null)
                 {
                     musicPlayer.Play(lbSongs.SelectedItem as Song);
+                    Song song = (Song)lbSongs.SelectedItem;
+                    try
+                    {
+                        link = new Uri(song.PathToFile);
+                        Music.Open(link);
+                        Music.Play();
+                    }
+                    catch(UriFormatException uriFormatException)
+                    {
+                        MessageBox.Show(uriFormatException.Message);
+                    }
+
                 }
                 else
                 {
@@ -131,6 +160,7 @@ namespace PRC_MusicPlayer
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
+            Music.Stop();
             musicPlayer.StopPlaying();
             UpdateSongLabel();
             UpdateLists();
@@ -145,6 +175,7 @@ namespace PRC_MusicPlayer
             else
             {
                 lblPlaying.Content = "Now playing: " + musicPlayer.IsPlaying().Name;
+
             }
         }
 
@@ -157,6 +188,18 @@ namespace PRC_MusicPlayer
             else
             {
                 musicPlayer.playingIndex--;
+                Music.Stop();
+                Song song = musicPlayer.Playing[musicPlayer.playingIndex];
+                try
+                {
+                    link = new Uri(song.PathToFile);
+                    Music.Open(link);
+                    Music.Play();
+                }
+                catch (UriFormatException uriFormatException)
+                {
+                    MessageBox.Show(uriFormatException.Message);
+                }
             }
             UpdateSongLabel();
             UpdateLists();
@@ -171,6 +214,18 @@ namespace PRC_MusicPlayer
             else
             {
                 musicPlayer.playingIndex++;
+                Music.Stop();
+                Song song = musicPlayer.Playing[musicPlayer.playingIndex];
+                try
+                {
+                    link = new Uri(song.PathToFile);
+                    Music.Open(link);
+                    Music.Play();
+                }
+                catch (UriFormatException uriFormatException)
+                {
+                    MessageBox.Show(uriFormatException.Message);
+                }
             }
             UpdateSongLabel();
             UpdateLists();
